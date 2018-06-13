@@ -1,5 +1,5 @@
-#The Stellate Project
+# The Stellate Project
 
-##Introduction
+## Introduction
 
 This project is the code repository for the Institute Technical Project of team Stellate.
