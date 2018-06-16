@@ -1,0 +1,162 @@
+#:kivy 1.10.0
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:set switch 1
+ScreenManagement:
+	transition: FadeTransition()
+	HomePage:
+	LoginScreen:
+	SignUp:
+	AboutPage:
+	AudioFiles:
+
+<HomePage>:
+	name: 'home'
+	Label:	
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': .15, 'y':.8}
+		text: 'Project Laser'
+		font_size: '25sp'
+	Button:
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': .15, 'y':0.65}
+		text: 'Login'
+		font_size: '25sp'
+		on_release: app.root.current= 'login'
+	Button:
+		font_size: '25sp'
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': .15, 'y':0.5}
+		text: 'Sign Up'
+		on_release: app.root.current= 'sign'
+	Button:
+		font_size: '25sp'
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': .15, 'y':0.35}
+		text: 'About Us'
+		on_release:
+			#:set switch 0
+			app.root.current= 'about'
+	
+
+
+<LoginScreen>:
+	name: 'login'
+	Label:
+		font_size: '25sp'	
+		text: 'Login'
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': .15, 'y':.7}
+		
+	TextInput:
+		font_size: '25sp'
+		multiline: False
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': 0.15, 'y':0.5}
+		text: 'Username'
+	TextInput:
+		font_size: '25sp'
+		multiline: False
+		password:True
+		text:'Password'
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': 0.15, 'y':0.3}
+	Button:
+		font_size: '25sp'
+		size_hint: (0.3, 0.1)
+		pos_hint: {'x': 0.15, 'y':0.1}
+		text:"Login"
+		on_release:app.root.current= 'audio'
+	Button:
+		font_size: '25sp'
+		size_hint: (0.3, 0.1)
+		pos_hint: {'x': 0.55, 'y':0.1}
+		text: 'Back'
+		on_release: app.root.current='home'		
+
+<SignUp>:
+	name:'sign'
+	Label:	
+		font_size: '25sp'
+		text: 'Sign Up'
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': .15, 'y':.7}
+		
+	TextInput:
+		font_size: '25sp'
+		multiline: False
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': 0.15, 'y':0.5}
+		text: 'Username'
+	TextInput:
+		multiline: False
+		password:True
+		font_size: '25sp'
+		text:'Password'
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': 0.15, 'y':0.3}
+	Button:
+		font_size: '25sp'
+		size_hint: (0.3, 0.1)
+		pos_hint: {'x': 0.15, 'y':0.1}
+		text:"Login"
+		on_release:app.root.current= 'audio'
+	Button:
+		font_size: '25sp'
+		size_hint: (0.3, 0.1)
+		pos_hint: {'x': 0.55, 'y':0.1}
+		text: 'Back'
+		on_release:
+			print "hello" 
+			app.root.current= 'home'
+
+<AboutPage>:
+	name: 'about'
+	Label:
+		font_size: '25sp'
+		size_hint: (0.7, 0.1)
+		text:"About Us"
+		pos_hint: {'x': 0.15, 'y':0.9}
+	Label:	
+		size_hint: (0.7, 0.5)
+		pos_hint: {'x': 0.15, 'y':0.3}
+		text:"This is stuff about the team. Also about the team and the thing with the project"
+	Button:
+		font_size: '25sp'
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': 0.15, 'y':0.1}
+		text: 'Back'
+		on_release: app.root.current= 'home'
+
+<AudioFiles>:
+	name: 'audio'
+
+	Label:
+		font_size: '25sp'
+		size_hint: (0.7, 0.2)
+		pos_hint: {'x': 0.15, 'y':0.7}
+		text: 'Your Account'
+	Button:
+		font_size: '25sp'
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': 0.15, 'y':0.55}
+		text: 'Studio'
+	Button:
+		font_size: '25sp'
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': 0.15, 'y':0.4}
+		text: 'Files'
+	Button:
+		font_size: '25sp'
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': 0.15, 'y':0.25}
+		text: 'About Us'
+		on_release:
+			#:set switch 1
+			app.root.current= 'about'
+	Button:
+		font_size: '25sp'
+		size_hint: (0.7, 0.1)
+		pos_hint: {'x': 0.15, 'y':0.1}
+		text: 'Sign Out'
+		on_release: app.root.current= 'home'
+		
